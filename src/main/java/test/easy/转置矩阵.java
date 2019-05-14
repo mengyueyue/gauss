@@ -1,8 +1,9 @@
 package test.easy;
 
+import org.junit.Assert;
+
 import java.util.Arrays;
 
-import junit.framework.Assert;
 
 /**
  * Created by mengyue on 2018/7/24.

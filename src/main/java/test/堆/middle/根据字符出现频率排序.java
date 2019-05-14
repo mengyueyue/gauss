@@ -23,7 +23,7 @@ public class 根据字符出现频率排序 {
             map.put(c, map.getOrDefault(c, 0) + 1);
         }
 
-        List<Character>[] list = new List[s.length() + 1];
+        ArrayList<Character>[] list = new ArrayList[s.length() + 1];
         for (Character c : map.keySet()) {
             int value = map.get(c);
             if(list[value] == null){
