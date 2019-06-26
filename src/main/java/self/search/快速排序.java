@@ -11,8 +11,8 @@ public class 快速排序 {
     public static void main(String[] args) {
         int[] array = new int[]{23, 123, 12, 5, 7, 14, 235, 124, 1, 6};
         //forwardScanSort(array, 0, array.length - 1);
-        //dualPivotQuickSort(array, 0, array.length - 1);
-        QuickSort3Way(array, 0, array.length - 1);
+        dualPivotQuickSort(array, 0, array.length - 1);
+        //QuickSort3Way(array, 0, array.length - 1);
         System.out.println(Arrays.toString(array));
     }
 
@@ -66,50 +66,50 @@ public class 快速排序 {
 
 
 
-    public static void QuickSort3Way(int[] A, int L, int R){
-        if(L >= R){//递归终止条件，少于等于一个元素的数组已有序
-            return;
-        }
-
-        int i,j,k,pivot;
-        pivot = A[L]; //首元素作为中轴
-        i = L;
-        k = L+1;
-        j = R;
-
-        OUT_LOOP:
-        while(k <= j){
-            if(A[k] < pivot){
-                swap(A, i, k);
-                i++;
-                k++;
-            }else
-            if(A[k] == pivot){
-                k++;
-            }else{// 遇到A[k]>pivot的情况，j从右向左扫描
-                while(A[j] > pivot){//A[j]>pivot的情况,j继续向左扫描
-                    j--;
-                    if(j < k){
-                        break OUT_LOOP;
-                    }
-                }
-                if(A[j] == pivot){//A[j]==pivot的情况
-                    swap(A, k, j);
-                    k++;
-                    j--;
-                }else{//A[j]<pivot的情况
-                    swap(A, i, j);
-                    swap(A, j, k);
-                    i++;
-                    k++;
-                    j--;
-                }
-            }
-        }
-        //A[i, j] 等于 pivot 且位置固定，不需要参与排序
-        QuickSort3Way(A, L, i-1); // 对小于pivot的部分进行递归
-        QuickSort3Way(A, j+1, R); // 对大于pivot的部分进行递归
-    }
+//    public static void QuickSort3Way(int[] A, int L, int R){
+//        if(L >= R){//递归终止条件，少于等于一个元素的数组已有序
+//            return;
+//        }
+//
+//        int i,j,k,pivot;
+//        pivot = A[L]; //首元素作为中轴
+//        i = L;
+//        k = L+1;
+//        j = R;
+//
+//        OUT_LOOP:
+//        while(k <= j){
+//            if(A[k] < pivot){
+//                swap(A, i, k);
+//                i++;
+//                k++;
+//            }
+//            if(A[k] == pivot){
+//                k++;
+//            }else{// 遇到A[k]>pivot的情况，j从右向左扫描
+//                while(A[j] > pivot){//A[j]>pivot的情况,j继续向左扫描
+//                    j--;
+//                    if(j < k){
+//                        break OUT_LOOP;
+//                    }
+//                }
+//                if(A[j] == pivot){//A[j]==pivot的情况
+//                    swap(A, k, j);
+//                    k++;
+//                    j--;
+//                }else{//A[j]<pivot的情况
+//                    swap(A, i, j);
+//                    swap(A, j, k);
+//                    i++;
+//                    k++;
+//                    j--;
+//                }
+//            }
+//        }
+//        //A[i, j] 等于 pivot 且位置固定，不需要参与排序
+//        QuickSort3Way(A, L, i-1); // 对小于pivot的部分进行递归
+//        QuickSort3Way(A, j+1, R); // 对大于pivot的部分进行递归
+//    }
 
 
     public static void dualPivotQuickSort(int[] items, int start, int end) {
@@ -125,7 +125,7 @@ public class 快速排序 {
                     swap(items, ++i, k++);
                 } else if (items[k] <= pivot2) {
                     k++;
-                } else {
+                } else {// 其实就是 items[k] > pivot2的
                     while (items[--j] > pivot2) {
                         if (j <= k) {
                             // 扫描终止
@@ -136,7 +136,7 @@ public class 快速排序 {
                     if (items[j] < pivot1) {
                         swap(items, j, k);
                         swap(items, ++i, k);
-                    } else {
+                    } else { // 间于 pivot1<=x<=pivot2的
                         swap(items, j, k);
                     }
                     k++;
