@@ -1,0 +1,21 @@
+### 字符串算法会用到的一些算法 以及解决那些问题
+
+> todo 算法——解决的问题——怎么解决
+
+-   后缀树
+-   哈希树
+-   自动机
+-   KMP算法
+-   Extend-KMP
+-   后缀数组
+-   trie树
+-   trie图及其应用
+-   滑动窗口（防止用暴力的方法循环遍历，导致做重复的工作，利用匹配过的信息）
+
+[滑动窗口算法通用思想](https://leetcode-cn.com/problems/minimum-window-substring/solution/hua-dong-chuang-kou-suan-fa-tong-yong-si-xiang-by-/)
+
+[后缀树的应用](https://blog.csdn.net/fjsd155/article/details/80214407 )
+
+
+
+![一些关键点](http://hi.csdn.net/attachment/201110/22/0_1319310556e53A.gif)

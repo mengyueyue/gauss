@@ -11,7 +11,7 @@ public class 词典中最长的单词 {
 
 
     public static void main(String[] args) {
-
+        System.out.println(longestWord(new String[]{"1", "2"}));
     }
 
 

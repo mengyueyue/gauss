@@ -1,8 +1,5 @@
 package test.树.easy;
 
-import com.sun.org.apache.bcel.internal.generic.RETURN;
-import org.omg.CORBA.INTERNAL;
-
 import static test.深度优先搜索.MyTreeNode.*;
 
 
@@ -12,7 +9,7 @@ import static test.深度优先搜索.MyTreeNode.*;
 public class 把二叉搜索树转换为累加树 {
 
     public static void main(String[] args) {
-
+        System.out.println();
     }
 
     private int sum = 0;

@@ -11,7 +11,15 @@ public class 杨辉三角 {
 
     public static void main(String[] args) {
 
-        generate(5);
+
+        while (true) {
+
+            //generate(6);
+        }
+
+//        List<List<Integer>> result = generate(5);
+//
+//        System.out.println(result.toString());
     }
 
 
